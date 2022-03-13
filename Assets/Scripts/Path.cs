@@ -19,15 +19,18 @@ public class Path : MonoBehaviour
                 nodes.Add(pathTransform[i]);
             }
         }
-
-        for(int i = 0; i< nodes.Count;i++){
-            Vector3 curentNode = nodes[i].position;
-            Vector3 previousNode = Vector3.zero;
-            if(i>0){
-                previousNode = nodes[i-1].position;
+        int j=1;
+        while(true){
+            try{
+                Vector3 curentNode = nodes[j-1].position;
+                Vector3 previousNode = nodes[j].position;
+                Gizmos.DrawLine(previousNode, curentNode);
+                Gizmos.DrawSphere(curentNode, 0.3f);
+                j++;
             }
-            Gizmos.DrawLine(previousNode, curentNode);
-            Gizmos.DrawSphere(curentNode, 0.3f);
+            catch{
+                break;
+            }
         }
     }
 
