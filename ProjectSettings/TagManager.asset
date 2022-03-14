@@ -16,6 +16,9 @@ TagManager:
   - Right
   - Car stop
   - avSpeed
+  - Traffic lights
+  - Sidewalk
+  - Crosswalk
   layers:
   - Default
   - TransparentFX

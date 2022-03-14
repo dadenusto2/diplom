@@ -994,7 +994,7 @@ Animator:
   m_GameObject: {fileID: 8676745181389521993}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 8c28075e6e1a5c34ca899fd618879dd4, type: 3}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 006ac541b7b52ac42b5cf88a2e56c26e, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -1019,8 +1019,8 @@ MonoBehaviour:
   reachedDestination: 0
   stopDistance: 1
   rotationSpeed: 600
-  minSpeed: 0
-  maxSpeed: 20
+  minSpeed: 1
+  maxSpeed: 2
   movementSpeed: 0
 --- !u!114 &-5795516627942116302
 MonoBehaviour:
