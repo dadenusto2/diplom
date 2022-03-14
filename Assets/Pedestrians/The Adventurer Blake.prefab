@@ -3202,7 +3202,7 @@ Animator:
   m_Avatar: {fileID: 9000000, guid: 027f00c86c565a44f865fc7c749b99e5, type: 3}
   m_Controller: {fileID: 9100000, guid: 006ac541b7b52ac42b5cf88a2e56c26e, type: 2}
   m_CullingMode: 1
-  m_UpdateMode: 0
+  m_UpdateMode: 2
   m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
@@ -3225,6 +3225,10 @@ MonoBehaviour:
   reachedDestination: 0
   stopDistance: 1
   rotationSpeed: 600
+  minSpeed: 2
+  maxSpeed: 5
+  minSpeed: 0
+  maxSpeed: 20
   minSpeed: 1
   maxSpeed: 2
   movementSpeed: 0
