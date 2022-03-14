@@ -21,19 +21,20 @@ public class WaypointNavigator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        bool shouldBranch = false;
+        if (controller.reachedDestination)
+        {
+            bool shouldBranch = false;
 
-        if (curentWaypoint.branches != null && curentWaypoint.branches.Count > 0)
-        {
-            shouldBranch = Random.Range(0f, 1f) <= curentWaypoint.branvhRatio ? true : false;
-        }
-        if (shouldBranch)
-        {
-            curentWaypoint = curentWaypoint.branches[Random.Range(0, curentWaypoint.branches.Count - 1)];
-        }
-        else
-        {
-            if (controller.reachedDestination)
+            if (curentWaypoint.branches != null && curentWaypoint.branches.Count > 0)
+            {
+                shouldBranch = Random.Range(0f, 1f) <= curentWaypoint.branvhRatio ? true : false;
+                Debug.LogWarning(shouldBranch);
+            }
+            if (shouldBranch)
+            {
+                curentWaypoint = curentWaypoint.branches[Random.Range(0, curentWaypoint.branches.Count - 1)];
+            }
+            else
             {
                 if (direction == 0)
                 {
@@ -47,7 +48,7 @@ public class WaypointNavigator : MonoBehaviour
                         direction = 1;
                     }
                 }
-                if (direction == 1)
+                else if (direction == 1)
                 {
                     if (curentWaypoint.previousWaypoint != null)
                     {
