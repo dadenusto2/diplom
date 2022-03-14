@@ -30,7 +30,6 @@ public class CarEngine : MonoBehaviour
     public bool carNext = false;
     public float drive = 0f;
     public float breakk = 0f;
-    private float c = 1;
     public bool noPath = true;
     // Start is called before the first frame update
     private void Start()

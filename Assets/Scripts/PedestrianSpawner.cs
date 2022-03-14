@@ -15,7 +15,6 @@ public class PedestrianSpawner : MonoBehaviour
     public GameObject Prefab8;
     public GameObject Prefab9;
 
-    private PedestrianCharacterController pedestrianPrefab;
     public int pedestrianToSpawn;
     private void Awake()
     {
@@ -42,11 +41,20 @@ public class PedestrianSpawner : MonoBehaviour
         int count = 0;
         while (count < pedestrianToSpawn)
         {
-            Transform child = transform.GetChild(Random.Range(0, transform.childCount - 1));
+            Transform child;
+            while (true)
+            {
+                int waypoint = Random.Range(0, transform.childCount - 1);
+                if(transform.GetChild(waypoint).GetComponent<Waypoint>().CompareTag("Sidewalk"))
+                {
+                    child = transform.GetChild(waypoint);
+                    break;
+                }
+            }
             GameObject obj = Instantiate(prefabList[prefabIndex], child.GetComponent<Waypoint>().transform.position, Quaternion.identity);
             obj.GetComponent<WaypointNavigator>().curentWaypoint = child.GetComponent<Waypoint>();
             count++;
-            prefabIndex = UnityEngine.Random.Range(0, prefabList.Count);
+            prefabIndex = Random.Range(0, prefabList.Count);
         }
 
     }
