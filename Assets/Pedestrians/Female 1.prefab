@@ -1944,10 +1944,6 @@ MonoBehaviour:
   reachedDestination: 0
   stopDistance: 1
   rotationSpeed: 600
-  minSpeed: 2
-  maxSpeed: 5
-  minSpeed: 0
-  maxSpeed: 20
   minSpeed: 1
   maxSpeed: 2
   movementSpeed: 0
