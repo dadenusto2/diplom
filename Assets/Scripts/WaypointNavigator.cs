@@ -26,10 +26,8 @@ public class WaypointNavigator : MonoBehaviour
             bool shouldBranch = false;
 
             if (curentWaypoint.branches != null && curentWaypoint.branches.Count > 0)
-            {
                 shouldBranch = Random.Range(0f, 1f) <= curentWaypoint.branvhRatio ? true : false;
-                Debug.LogWarning(shouldBranch);
-            }
+
             if (shouldBranch)
             {
                 curentWaypoint = curentWaypoint.branches[Random.Range(0, curentWaypoint.branches.Count - 1)];

@@ -57,7 +57,6 @@ public class WaypointManagerWindow : EditorWindow
             CreateWaypoint();
         }
     }
-
     void CreateWaypoint()
     {
         GameObject waypointObject = new GameObject("Waypoint " + waypointRoot.childCount, typeof(Waypoint));
